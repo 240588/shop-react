@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 
-const ProductCard = ({ product }) =>{
+const ProductCard = ({ product, addToCart }) =>{
     return(
         <div className="bg-white rounded shadow p-4">
             <img src={product.image} alt={product.title} className="w-full h-48 obgect-cover rounded" />
@@ -9,6 +9,10 @@ const ProductCard = ({ product }) =>{
             <Link to={`/product/${product.id}`} className="mt-4 inline-block bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600">
             Подробнее
             </Link>
+            <div className="mt-4 flex gap-4 content-center">
+            <button onClick={()=> addToCart(product)} className="mt-6 bg-green-500 text-white px-4 py-2 
+                rounded hover:bg-green-600">Купить</button>
+            </div>
         </div>
 
     );
